@@ -1,0 +1,46 @@
+{
+  "db": {
+    "DBNAME_LINEBOT":"linebotdb",
+    "TBNAME_INTERVAL_MSG": "interval_msg",
+    "TBNAME_REPLY_MSG":"reply_msg",
+    "DB_HOSTNAME": "localhost",
+    "DB_USER": "",
+    "DB_PASSWD": ""
+  },
+  "line": {
+    "TEST_MODE": true,
+    "TEST_CHANNEL_SECRET": "",
+    "TEST_CHANNEL_ACCESS_TOKEN": "",
+    "CHANNEL_SECRET": "",
+    "CHANNEL_ACCESS_TOKEN": "",
+    "DEFAULT_PORT": 3000
+  },
+  "weather": {
+    "API_KEY": "",
+    "LATITUDE": 35.048321,
+    "LONGITUDE": 135.778597,
+    "EXCLUDE_KEY": "current,minutely",
+    "INTERVAL_TIME_MS": 20000,
+    "NOTIFY_MORNING_HOUR": 6,
+    "NOTIFY_NIGHT_HOUR": 22,
+    "NOTIFY_MINUTE_ONEDAY": 10,
+    "NOTIFY_MINUTE_FIVEDAY": 9,
+    "NOTIFY_FIVEDAY_WEEK": ["Sunday", "Friday"],
+    "BASE_URL": "http://api.openweathermap.org/data/2.5/onecall",
+    "SHOW_HOUR": [7, 8, 12, 17, 18, 20],
+    "NIGHT_MSG": "明日(%d日)の天気は【%s】です。\n時間ごとの降水確率は以下の通りです。\n   %d時：%s [%]\n   %d時：%s [%]\n  %d時：%s [%]\n  %d時：%s [%]\n  %d時：%s [%]\n  %d時：%s [%]",
+    "MORNING_MSG": "今日(%d日)の天気は【%s】です。\n時間ごとの降水確率は以下の通りです。\n   %d時：%s [%]\n   %d時：%s [%]\n  %d時：%s [%]\n  %d時：%s [%]\n  %d時：%s [%]\n  %d時：%s [%]",
+    "FIVEDAY_MSG": "明日から５日間の天気です。\n  %s月%s日：%s [%]  【%s】\n  %s月%s日：%s [%]  【%s】\n  %s月%s日：%s [%]  【%s】\n  %s月%s日：%s [%]  【%s】\n  %s月%s日：%s [%]  【%s】"
+  },
+  "interval_msg": {
+    "INTERVAL_TIME_MS": 20000
+  },
+  "reply_msg": {
+    "NOT_FOUND_MSG": "ごめんなさい。メッセージがよく分からないです(._.)"
+  }
+}
+
+# 未入力となっている箇所は環境に合わせて設定する。
+# ファイル名は、末尾の「sample」を削除して、「appconf.json」に変更する。
+
+
