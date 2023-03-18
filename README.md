@@ -1,15 +1,18 @@
 # Linebot
 ## アプリ実行方法
 
-
+### docker構築
+```
+$ docker-compose up -d
+```
 
 ### テスト
-```
+```bash
 $ npm run test
 ```
 
-### ビルド
-```
+### アプリビルド
+```bash
 $ npm run build
 ```
 
