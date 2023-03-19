@@ -16,19 +16,19 @@ services:
 
   db:
     image: mysql:8
-    restart: always
     environment:
       MYSQL_DATABASE: app
       MYSQL_USER: linebot
       MYSQL_PASSWORD: linebot
       MYSQL_ROOT_PASSWORD: linebot
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_general_ci
       TZ: "Asia/Tokyo"
     volumes:
-      - db_data:/var/lib/mysql
+      - ./docker/db/data:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    restart: always
     ports:
       - "8081:80"
     environment:
