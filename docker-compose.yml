@@ -2,8 +2,7 @@ version: "3"
 services:
   node:
     build:
-      context: .
-      dockerfile: ./docker/app/Dockerfile
+      context: ./docker/app
     ports:
       - "3011:3000"
     depends_on:
@@ -39,7 +38,6 @@ services:
 
   ultrahook:
     build:
-      context: .
-      dockerfile: ./docker/ultrahook/Dockerfile
+      context: ./docker/ultrahook
     depends_on:
       - node

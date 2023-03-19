@@ -2,8 +2,11 @@
 ## アプリ実行方法
 
 ### docker構築
-```
-$ docker-compose up -d
+```bash
+$ cd docker/ultrahook
+$ cp .ultrahook.example .ultrahook
+<ultrahookのAPIキーの入力>
+$ docker-compose up -d --build
 ```
 
 ### テスト
