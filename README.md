@@ -23,6 +23,6 @@ $ npm run build
 
 ### 実行
 ビルド後に下記コマンドを実行する。
-```
+```bash
 $ npm start
 ```
