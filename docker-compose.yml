@@ -43,6 +43,3 @@ services:
       dockerfile: ./docker/ultrahook/Dockerfile
     depends_on:
       - node
-
-volumes:
-  db_data:
