@@ -1,0 +1,48 @@
+version: "3"
+services:
+  node:
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    ports:
+      - "3011:3000"
+    depends_on:
+      - db
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_DATABASE: app
+      MYSQL_USER: linebot
+      MYSQL_PASSWORD: linebot
+      MYSQL_ROOT_PASSWORD: linebot
+      TZ: "Asia/Tokyo"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_USER: linebot
+      MYSQL_PASSWORD: linebot
+      MYSQL_ROOT_PASSWORD: linebot
+
+  ultrahook:
+    build:
+      context: .
+      dockerfile: ./docker/ultrahook/Dockerfile
+    depends_on:
+      - node
+
+volumes:
+  db_data:
